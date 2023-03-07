@@ -31,7 +31,7 @@ public class playerMovement : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpHeight;
         }
-        //cannot attach boxcollider2d to object as it won't move then. BUG will stay attached to the "ground" when mid jump
+        //allow double jump?
     }
 
 

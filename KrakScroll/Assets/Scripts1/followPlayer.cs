@@ -18,7 +18,7 @@ public class followPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //somehow not following the player
+        
     }
 
     private void LateUpdate()
