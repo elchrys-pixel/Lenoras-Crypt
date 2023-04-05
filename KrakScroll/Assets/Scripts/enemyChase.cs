@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyChse : MonoBehaviour
+public class enemyChase : MonoBehaviour
 {
-    public obstacleBats[] enemyArray;
+    public ObstacleBats[] enemyArray;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            foreach (obstacleBats enemy in enemyArray)
+            foreach (ObstacleBats enemy in enemyArray)
             {
                 enemy.chase = true;
             }
@@ -21,7 +21,7 @@ public class enemyChse : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            foreach (obstacleBats enemy in enemyArray)
+            foreach (ObstacleBats enemy in enemyArray)
             {
                 enemy.chase = false;
             }

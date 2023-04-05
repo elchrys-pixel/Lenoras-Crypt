@@ -32,14 +32,17 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizInput = Input.GetAxis("Horizontal");
-
-        if (isGrounded() && Input.GetButtonDown("Jump"))
+        if (GetComponent<PlayerHealth>().health > 0)
         {
-            rb.velocity = Vector2.up * jumpHeight;
-        }
-        //allow double jump?
+            horizInput = Input.GetAxis("Horizontal");
 
+            if ((isGrounded() || GetComponent<PlayerHealth>().isInAcid) && Input.GetButtonDown("Jump"))
+            {
+                rb.velocity = Vector2.up * jumpHeight;
+            }
+            //allow double jump?
+        }
+        else horizInput = 0;
     }
 
     private void FixedUpdate()

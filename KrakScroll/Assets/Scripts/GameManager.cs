@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Developer Mode")]
+    public int sceneID;
     [SerializeField] private bool enableDevMode;
-    [SerializeField] private int sceneID;
 
     // Start is called before the first frame update
     void Start()

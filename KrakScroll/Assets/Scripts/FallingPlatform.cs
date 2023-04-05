@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class FallingPlatform : MonoBehaviour
 {
-
-    private float fallDelay = 1f;
+    private float fallDelay = 0.55f;
     private float destroyDelay = 2f;
 
     [SerializeField] private Rigidbody2D rb;
@@ -14,6 +13,7 @@ public class FallingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            GetComponent<Animator>().SetTrigger("Shake");
             StartCoroutine(Fall());
         }
     }
@@ -21,6 +21,7 @@ public class FallingPlatform : MonoBehaviour
     private IEnumerator Fall()
     {
         yield return new WaitForSeconds(fallDelay);
+        GetComponent<Animator>().SetTrigger("Fall");
         rb.bodyType = RigidbodyType2D.Dynamic;
         Destroy(gameObject, destroyDelay);
     }
