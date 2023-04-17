@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyChase : MonoBehaviour
+public class EnemyChase : MonoBehaviour
 {
     public ObstacleBats[] enemyArray;
 
