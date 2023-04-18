@@ -287,7 +287,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 376195387270764473}
-  - component: {fileID: 883533741542623370}
   - component: {fileID: 6233567795904010499}
   m_Layer: 5
   m_Name: LevelName
@@ -319,22 +318,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 169}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &883533741542623370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5572359262975474239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29ad164ddebfda54e871f8a8c0df82b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelNumber: 3
-  levelName: LENORA'S CRYPT
-  levelText: {fileID: 3127581936765385870}
-  levelNameText: {fileID: 4979668734959850311}
 --- !u!95 &6233567795904010499
 Animator:
   serializedVersion: 4
