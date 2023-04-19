@@ -55,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnDeath()
     {
-        SceneManager.LoadScene(GameObject.Find("GameManager").GetComponent<GameManager>().sceneID);
+        GameManager.ResetLevel();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
