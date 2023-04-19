@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 
 public class DestructionSourceHandler : MonoBehaviour
 {
-    [TextArea(1, 12), SerializeField] string howToUse = "Spawn this object next to a wall, adjust width and depth using the defaultRadius; x = width, y = depth.\n\nDirection of destruction is relative to this objects position (place to the left of a tile and the impact direction is right, place below, direction up, etc)\n\nPrefab can be found in: Assets/Prefabs/DestructibleTiles > ImpactPoint";
+    [TextArea(1, 12), SerializeField] string howToUse = "Spawn this object next to a wall, adjust width and depth using the defaultRadius; x = width, y = depth.\n\nDirection of destruction is relative to this objects position (place to the left of a tile and the impact direction is right, place below, direction up, etc)\n\n Prefab can be found in: Assets/Prefabs/DestructibleTiles > ImpactPoint";
 
     [Header("Destruction Settings")]
     public float impactForce;
