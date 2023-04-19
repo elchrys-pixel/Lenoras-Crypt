@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,12 +24,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.R)) // QUICK RESET LEVEL
         {
-            ResetLevel();
+            SceneManager.LoadScene(sceneID);
         }
-    }
-
-    public static void ResetLevel()
-    {
-        SceneManager.LoadScene(FindObjectOfType<GameManager>().sceneID);
     }
 }
