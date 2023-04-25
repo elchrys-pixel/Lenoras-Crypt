@@ -18,12 +18,14 @@ public class ParallexBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //h ttps://www.youtube.com/watch?v=zit45k6CUMk 
+       
     }
 
     private void FixedUpdate()
     {
         float dist = Camera.transform.position.x * ParaStrength;
-        transform.position = new Vector3(startingpos + dist, transform.position.y, transform.position.GetHashCode());
+       
+
+        transform.position = new Vector3(startingpos + dist, transform.position.y);
     }
 }
