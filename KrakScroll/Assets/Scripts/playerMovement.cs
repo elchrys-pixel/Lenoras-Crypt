@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Adjustables")] // ADDS TITLE IN INSPECTOR - ZERO EFFECTS ON CODE
     public float speed;
     public float jumpHeight;
+    public float resetY;
 
     [Header("Ground Check")]
     public float groundDistance; // MAX DISTANCE FROM FEET TO GROUND
@@ -43,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
             //allow double jump?
         }
         else horizInput = 0;
+        ResetOnMinY();
     }
 
     private void FixedUpdate()
@@ -58,5 +61,10 @@ public class PlayerMovement : MonoBehaviour
         if (Physics2D.Raycast((Vector2)feet.transform.position, -transform.up, groundDistance, groundLayer)) return true; // CENTER
         if (Physics2D.Raycast((Vector2)feet.transform.GetChild(1).transform.position, -transform.up, groundDistance, groundLayer)) return true; // RIGHT
         return false; // REUTRNS FALSE IF NOT GROUNDED
+    }
+
+    private void ResetOnMinY()
+    {
+        if (transform.position.y <= resetY) GameManager.ResetLevel();
     }
 }
