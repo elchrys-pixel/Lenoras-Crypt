@@ -6,7 +6,6 @@ using static UnityEditorInternal.ReorderableList;
 public class ButtonHandler : MonoBehaviour
 {
     [SerializeField] private int maxPanTime;
-    [SerializeField] private float defaultX;
     [SerializeField] private DoorHandler linkedDoor;
     [SerializeField] private SpriteRenderer button;
     [SerializeField] private InteractionUI interactionUI;
