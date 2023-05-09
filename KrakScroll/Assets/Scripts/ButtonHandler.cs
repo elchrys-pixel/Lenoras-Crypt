@@ -37,7 +37,11 @@ public class ButtonHandler : MonoBehaviour
         {
             panTimer++;
             Camera.main.GetComponent<CameraFollow>().target = linkedDoor.transform;
-            if (panTimer > maxPanTime / 3 && !linkedDoor.isOpen) linkedDoor.isOpen = true;
+            if (panTimer > maxPanTime / 3 && !linkedDoor.isOpen)
+            {
+                GameObject.Find("Player").GetComponent<PlayerHealth>().canSurviveAcid = true; // REMOVE AFTER INTRODUCING STAFF WHEEL
+                linkedDoor.isOpen = true;
+            }
         }
         else
         {

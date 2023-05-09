@@ -21,30 +21,21 @@ public class PlayerMovement : MonoBehaviour
 
     // OTHER
     private float horizInput;
-    private Vector2 spawnPos;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         feet = GameObject.Find("Feet");
-        spawnPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<PlayerHealth>().health > 0)
-        {
-            horizInput = Input.GetAxis("Horizontal");
-
-            if ((isGrounded() || GetComponent<PlayerHealth>().isInAcid) && Input.GetButtonDown("Jump"))
-            {
-                rb.velocity = Vector2.up * jumpHeight;
-            }
-            //allow double jump?
-        }
-        else horizInput = 0;
+        horizInput = Input.GetAxis("Horizontal");
+        if ((CheckIsGrounded() || GetComponent<PlayerHealth>().isInAcid) && Input.GetButtonDown("Jump")) rb.velocity = Vector2.up * jumpHeight;
+        //allow double jump?
         ResetOnMinY();
     }
 
@@ -53,10 +44,10 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(speed * horizInput, rb.velocity.y);
     }
 
-    private bool isGrounded()
+    private bool CheckIsGrounded()
     {
         // CHECKS BELOW SPRITE AT THREE POINTS. INSTEAD OF CHECKING OVERLAPPING COLLIDERS, THIS IS MORE OF A MANUAL CHECK IN A STRAIGHT LINE, OVERLAPPING AT ANY SIZE WOULD ALLOW CLIMBING WALLS, IDK WHY BUT THIS FIXES IT
-        // TO CHECK IF PLAYER IS GROUNDED, USE 'isGrounded()' AS YOU WOULD A NORMAL BOOL
+        // TO CHECK IF PLAYER IS GROUNDED, USE 'CheckIsGrounded()' AS YOU WOULD A NORMAL BOOL
         if (Physics2D.Raycast((Vector2)feet.transform.GetChild(0).transform.position, -transform.up, groundDistance, groundLayer)) return true; // LEFT
         if (Physics2D.Raycast((Vector2)feet.transform.position, -transform.up, groundDistance, groundLayer)) return true; // CENTER
         if (Physics2D.Raycast((Vector2)feet.transform.GetChild(1).transform.position, -transform.up, groundDistance, groundLayer)) return true; // RIGHT

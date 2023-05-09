@@ -5,50 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health;
-    public int maxHealth;
-
+    public bool canSurviveAcid;
     public bool isInAcid;
-    public int acidDamage;
-
-    private int acidTimer, maxAcidTime = 50;
-
-    private void Start()
-    {
-        health = maxHealth;
-    }
 
     private void Update()
     {
-        if (isInAcid)
+        if (canSurviveAcid && isInAcid) GetComponent<Rigidbody2D>().gravityScale = 0.2f;
+        else GetComponent<Rigidbody2D>().gravityScale = 2f;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.Contains("Acid"))
         {
-            GetComponent<Rigidbody2D>().gravityScale = 0.2f;
-            if (acidTimer < maxAcidTime) acidTimer++;
-            else
-            {
-                TakeDamage(acidDamage);
-                acidTimer = 0;
-            }
-        }
-        else
-        {
-            GetComponent<Rigidbody2D>().gravityScale = 2f;
-            acidTimer = 0;
+            if (canSurviveAcid) isInAcid = true;
+            else OnDeath();
         }
     }
 
-    public void AddHealth(int healAmount)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (health + healAmount > maxHealth) health = maxHealth;
-        else health += healAmount;
-    }
-
-    public void TakeDamage(int damageAmount)
-    {
-        if (health - damageAmount > 0) health -= damageAmount;
-        else
+        if (collision.gameObject.name.Contains("Kill"))
         {
-            health = 0;
             OnDeath();
         }
     }
@@ -56,12 +34,6 @@ public class PlayerHealth : MonoBehaviour
     private void OnDeath()
     {
         GameManager.ResetLevel();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Hello Acid!");
-        if (collision.gameObject.name.Contains("Acid")) isInAcid = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
