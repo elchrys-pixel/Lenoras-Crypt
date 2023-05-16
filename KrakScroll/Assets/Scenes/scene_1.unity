@@ -1529,13 +1529,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 699771004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29ad164ddebfda54e871f8a8c0df82b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 820251260ad6a81479f1495479c92f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 1
-  levelName13Chars: EVILENE'S TOMB
-  levelText: {fileID: 1217975435}
-  levelNameText: {fileID: 1395207037}
 --- !u!1 &837648253
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,17 +2077,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 1454719156}
   ParaStrength: 0.8
---- !u!114 &1217975435 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3127581936765385870, guid: 2182eb48c8eb8ad46b823d7af1e47764, type: 3}
-  m_PrefabInstance: {fileID: 1609202051070462290}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1262143989
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,17 +2474,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 1454719156}
   ParaStrength: 0.2
---- !u!114 &1395207037 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4979668734959850311, guid: 2182eb48c8eb8ad46b823d7af1e47764, type: 3}
-  m_PrefabInstance: {fileID: 1609202051070462290}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1454719156 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1609202051023581486, guid: 2182eb48c8eb8ad46b823d7af1e47764, type: 3}
